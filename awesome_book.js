@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 let Book = [];
 
 const bookTitle = document.getElementById('title');
@@ -11,17 +12,24 @@ class Books {
     this.author = author;
   }
 }
+if (!localStorage.getItem('books')) {
+  localStorage.setItem('books', JSON.stringify(Book));
+}
 
 function addBook() {
-  let title = bookTitle.value;
-  let author = bookAuthor.value;
+  const title = bookTitle.value;
+  const author = bookAuthor.value;
   const book = new Books(title, author);
+  if (title === '' && author === '') {
+    return;
+  }
   Book.push(book);
+  const storage = JSON.parse(localStorage.getItem('books'));
+  storage.push(book);
   const div = document.createElement('div');
-  div.innerHTML = `<h2>${book.Title}</h2> <p>${book.author}</p> <button onclick='$remove(this)' class='remove-book'>remove</button> <hr>`;
+  div.innerHTML = `<h2>${book.Title}</h2> <p>${book.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
   displayBooks.appendChild(div);
-  author = '';
-  title = '';
+  localStorage.setItem('books', JSON.stringify(storage));
 }
 
 add.addEventListener('click', addBook);
@@ -31,6 +39,7 @@ function remove(e) {
     /* eslint-enable */
   displayBooks.innerHTML = '';
   Book = Book.filter((book) => book.Title !== e.parentElement.childNodes[0].textContent);
+  localStorage.setItem('books', JSON.stringify(Book));
 
   /* eslint-disable */
     Book.map((book) => {
@@ -41,21 +50,14 @@ function remove(e) {
   });
 }
 
-let formData = {
-  title: '',
-  author: '',
-};
-
-if (localStorage.getItem('formData') !== null) {
-  const data = localStorage.getItem('formData');
-  formData = JSON.parse(data);
+function getBooks() {
+  Book = JSON.parse(localStorage.getItem('books'));
+  // eslint-disable-next-line array-callback-return
+  Book.map((item) => {
+    const div = document.createElement('div');
+    div.innerHTML = `<h2>${item.Title}</h2> <p>${item.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
+    displayBooks.appendChild(div);
+  });
 }
 
-const formElements = document.querySelectorAll('input, textarea');
-formElements.forEach((element) => {
-  element.value = formData[element.name];
-  element.addEventListener('input', (e) => {
-    formData[e.target.name] = e.target.value;
-    localStorage.setItem('formData', JSON.stringify(formData));
-  });
-});
+window.addEventListener('load', getBooks());
