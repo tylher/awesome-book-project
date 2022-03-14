@@ -23,6 +23,8 @@ function addBook() {
     let div = document.createElement('div');
     div.innerHTML = `<h2>${book.Title}</h2> <p>${book.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`
     displayBooks.appendChild(div);
+    author = "";
+    title = "";
 }
 
 add.addEventListener('click', addBook);
@@ -41,3 +43,23 @@ function remove(e) {
         displayBooks.appendChild(div);
     })
 }
+
+
+let formData = {
+    title: '',
+    author: '',
+  };
+
+  if (localStorage.getItem('formData') !== null) {
+    const data = localStorage.getItem('formData');
+    formData = JSON.parse(data);
+  }
+
+const formElements = document.querySelectorAll('input, textarea');
+formElements.forEach((element) => {
+  element.value = formData[element.name];
+  element.addEventListener('input', (e) => {
+    formData[e.target.name] = e.target.value;
+    localStorage.setItem('formData', JSON.stringify(formData));
+  });
+});
