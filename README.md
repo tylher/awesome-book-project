@@ -1,15 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome books
 
-> Description the project.
+> An book library app that stores books. any book can be added to the books library and remover from the books library
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- JavaScript
 
 ## Live Demo (if available)
 
@@ -18,23 +17,44 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Understand how HTML and javascript object works
+- Understand github and gitflow
 
-### Setup
 
 ### Install
+To view and edit this project, you need to install the following,
+- Any web browser of your choice
+- Git and Gitbash
+- Any code editor of your choice
 
 ### Usage
+- To clone the repository run this command `git clone git@github.com:tylher/awesome-book-project.git` in your command line
 
 ### Run tests
+For tracking linters errors locally you need to follow these steps:
+
+- After cloning the project you need to run this command
+
+  > npm install
+  > `This command will download all the dependencies of the project`
+
+- For tracking the linter errors in HTML file run:
+
+  > npx hint .
+
+- For tracking the linter errors in CSS file run:
+
+  > npx stylelint "\*_/_.{css,scss}"
+
+  - And For tracking the linter errors in JavaScript file run:
+    > npx eslint .
 
 ### Deployment
+- GitHub Pages was used to deploy my website
+- For more information, see "[About github page](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)"
 
 
 
@@ -42,15 +62,13 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@tylher](https://github.com/tylher)
+- Twitter: [@tylher123](https://twitter.com/tylher123)
+- LinkedIn: [Taiwo Adediran](https://www.linkedin.com/in/taiwo-adediran-327654127/)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/https://github.com/Shubh-Dev)
 
 ## 🤝 Contributing
 

@@ -1,0 +1,10 @@
+{
+  "liveServer.settings.port": 5501,
+  "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}
