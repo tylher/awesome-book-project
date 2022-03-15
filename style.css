@@ -1,1 +1,29 @@
 /* styles for project */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-section {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.main-form {
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+
+.display-books {
+    margin: auto;
+    border: 3px black solid;
+}
+
+.my-book-division {
+    display: flex;
+    flex-direction: row-reverse;
+    float: left;
+}

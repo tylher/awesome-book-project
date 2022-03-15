@@ -5,6 +5,11 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const displayBooks = document.querySelector('.display-books');
 const add = document.querySelector('.add-book');
+let myBookDivision = document.createElement('div');
+myBookDivision.className = 'my-book-division';
+myBookDivision.appendChild(bookTitle);
+myBookDivision.appendChild(bookAuthor);
+console.log(myBookDivision);
 
 class Books {
   constructor(Title, author) {
