@@ -27,3 +27,12 @@ body {
     flex-direction: row-reverse;
     float: left;
 }
+
+.flex-division-box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.remove-book {
+    float: right;
+}

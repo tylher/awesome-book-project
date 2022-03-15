@@ -5,11 +5,7 @@ const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
 const displayBooks = document.querySelector('.display-books');
 const add = document.querySelector('.add-book');
-let myBookDivision = document.createElement('div');
-myBookDivision.className = 'my-book-division';
-myBookDivision.appendChild(bookTitle);
-myBookDivision.appendChild(bookAuthor);
-console.log(myBookDivision);
+
 
 class Books {
   constructor(Title, author) {
@@ -17,6 +13,8 @@ class Books {
     this.author = author;
   }
 }
+
+
 if (!localStorage.getItem('books')) {
   localStorage.setItem('books', JSON.stringify(Book));
 }
@@ -32,7 +30,7 @@ function addBook() {
   const storage = JSON.parse(localStorage.getItem('books'));
   storage.push(book);
   const div = document.createElement('div');
-  div.innerHTML = `<h2>${book.Title}</h2> <p>${book.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
+  div.innerHTML = `<div class="flex-division-box"><h2>${book.Title}</h2> <p>${book.author}</p></div><button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
   displayBooks.appendChild(div);
   localStorage.setItem('books', JSON.stringify(storage));
 }
