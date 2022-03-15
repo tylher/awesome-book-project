@@ -12,8 +12,9 @@ body {
 
 .main-form {
   margin: auto;
-  width: 30%;
+  min-width: 30%;
   text-align: center;
+
 }
 
 .display-books {

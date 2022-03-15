@@ -6,6 +6,10 @@ const bookAuthor = document.getElementById('author');
 const displayBooks = document.querySelector('.display-books');
 const add = document.querySelector('.add-book');
 
+if (!localStorage.getItem('books')) {
+  localStorage.setItem('books', JSON.stringify(Book));
+}
+
 
 class Books {
   constructor(Title, author) {
@@ -15,9 +19,7 @@ class Books {
 }
 
 
-if (!localStorage.getItem('books')) {
-  localStorage.setItem('books', JSON.stringify(Book));
-}
+
 
 function addBook() {
   const title = bookTitle.value;
@@ -42,7 +44,9 @@ add.addEventListener('click', addBook);
 function remove(e) {
     /* eslint-enable */
   displayBooks.innerHTML = '';
-  Book = Book.filter((book) => book.Title !== e.parentElement.childNodes[0].textContent);
+  console.log(e.parentElement.childNodes[0].childNodes[0])
+  Book = Book.filter((book) => book.Title !== e.parentElement.childNodes[0].childNodes[0].textContent);
+  console.log(Book);
   localStorage.setItem('books', JSON.stringify(Book));
 
   /* eslint-disable */
