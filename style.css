@@ -1,38 +1,40 @@
 /* styles for project */
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .main-section {
-    width: 50%;
-    height: auto;
-    margin: auto;
-    text-align: center;
+  width: 50%;
+  height: auto;
+  margin: auto;
+  text-align: center;
 }
 
 .main-form {
-    margin: auto;
-    width: 30%;
-    text-align: center;
+  margin: auto;
+  width: 30%;
+  text-align: center;
 }
 
 .display-books {
-    margin: auto;
-    border: 3px black solid;
+  margin: auto;
+  border: 3px black solid;
 }
 
 .my-book-division {
-    display: flex;
-    flex-direction: row-reverse;
-    float: left;
+  display: flex;
+  flex-direction: row-reverse;
+  float: left;
 }
 
 .flex-division-box {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.remove-book {
-    float: right;
+
+.align-items{
+    display: flex;
+    justify-content: space-between;
 }

@@ -30,6 +30,7 @@ function addBook() {
   const storage = JSON.parse(localStorage.getItem('books'));
   storage.push(book);
   const div = document.createElement('div');
+  div.className="align-items";
   div.innerHTML = `<div class="flex-division-box"><h2>${book.Title}</h2> <p>${book.author}</p></div><button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
   displayBooks.appendChild(div);
   localStorage.setItem('books', JSON.stringify(storage));
