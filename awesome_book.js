@@ -30,8 +30,8 @@ function addBook() {
   const storage = JSON.parse(localStorage.getItem('books'));
   storage.push(book);
   const div = document.createElement('div');
-  div.className="align-items";
-  div.innerHTML = `<div class="flex-division-box"><h2>${book.Title}</h2> <p>${book.author}</p></div><button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
+  div.classList.add('align-items')
+  div.innerHTML = `<div class="flex-division-box"><h4>${book.Title}</h4> <p>${book.author}</p></div><button onclick='remove(this)' class='remove-book'>remove</button> `;
   displayBooks.appendChild(div);
   localStorage.setItem('books', JSON.stringify(storage));
 }
@@ -48,8 +48,9 @@ function remove(e) {
   /* eslint-disable */
     Book.map((book) => {
         /* eslint-enable */
-    const div = document.createElement('div');
-    div.innerHTML = `<h2>${book.Title}</h2> <p>${book.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
+      const div = document.createElement('div');
+      div.classList.add('align-items')
+    div.innerHTML = `<div class="flex-division-box"><h4>${book.Title}</h4> <p>${book.author}</p></div> <button onclick='remove(this)' class='remove-book'>remove</button> `;
     displayBooks.appendChild(div);
   });
 }
@@ -59,7 +60,8 @@ function getBooks() {
   // eslint-disable-next-line array-callback-return
   Book.map((item) => {
     const div = document.createElement('div');
-    div.innerHTML = `<h2>${item.Title}</h2> <p>${item.author}</p> <button onclick='remove(this)' class='remove-book'>remove</button> <hr>`;
+    div.classList.add('align-items')
+    div.innerHTML = `<div class="flex-division-box"><h4>${item.Title}</h4> <p>${item.author}</p> </div> <button onclick='remove(this)' class='remove-book'>remove</button> `;
     displayBooks.appendChild(div);
   });
 }
