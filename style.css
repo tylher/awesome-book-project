@@ -5,23 +5,23 @@
   box-sizing: border-box;
 }
 
-h1{
+h1 {
   font-size: 35px;
 }
 
-h2{
+h2 {
   font-size: 30px;
 }
 
-h3{
+h3 {
   font-size: 25px;
 }
 
-p{
+p {
   font-size: 20px;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   padding: 10px 8%;
@@ -29,26 +29,26 @@ header{
   margin-bottom: 20px;
 }
 
-header>h2{
+header > h2 {
   color: rgb(36, 36, 36);
 }
 
-nav{
+nav {
   width: 50%;
 }
 
-nav ul{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 20px;
+nav ul {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
 }
 
-nav ul li{
+nav ul li {
   list-style: none;
 }
 
-nav ul li>a{
+nav ul li > a {
   color: rgb(65, 65, 65);
   text-decoration: none;
   font-size: 20px;
@@ -93,7 +93,7 @@ input {
   width: 70%;
   padding: 30px;
   font-size: 20px;
-  border-radius:10px ;
+  border-radius: 10px;
   border: 1px gray solid;
 }
 
@@ -101,6 +101,7 @@ input {
   width: 70%;
   margin: auto;
   border: 3px black solid;
+
   /* padding: 30px 20px; */
   display: flex;
   flex-direction: column;
@@ -124,11 +125,11 @@ input {
   padding: 10px;
 }
 
-.align-items:nth-child(odd){
+.align-items:nth-child(odd) {
   background-color: rgb(175, 174, 174);
 }
 
-.align-items:nth-child(odd) button{
+.align-items:nth-child(odd) button {
   background-color: white;
 }
 
@@ -145,28 +146,28 @@ input {
   display: none;
 }
 
-.remove-book{
+.remove-book {
   padding: 10px 30px;
   border: none;
   border-radius: 10px;
   background-color: rgb(175, 174, 174);
 }
 
-.contact-section{
+.contact-section {
   flex-direction: column;
   height: 100%;
   align-items: center;
-  padding:0 50px;
+  padding: 0 50px;
 }
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: auto;
 }
 
-footer{
+footer {
   background-color: rgba(0, 0, 0, 0.829);
   padding: 20px;
   position: fixed;
@@ -174,6 +175,6 @@ footer{
   width: 100%;
 }
 
-footer p{
+footer p {
   color: #fff;
 }
