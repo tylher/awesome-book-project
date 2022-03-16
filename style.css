@@ -17,6 +17,43 @@ h3{
   font-size: 25px;
 }
 
+p{
+  font-size: 20px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 8%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header>h2{
+  color: rgb(36, 36, 36);
+}
+
+nav{
+  width: 50%;
+}
+
+nav ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li{
+  list-style: none;
+}
+
+nav ul li>a{
+  color: rgb(65, 65, 65);
+  text-decoration: none;
+  font-size: 20px;
+}
+
 main {
   height: 85vh;
 }
@@ -45,11 +82,9 @@ main {
 }
 
 .add-book {
-  padding: 10px;
-  width: 100px;
-  background-color: gray;
+  padding: 10px 50px;
+  background-color: rgb(175, 174, 174);
   border-radius: 10px;
-  font-size: 18px;
   border: none;
 }
 
@@ -66,10 +101,9 @@ input {
   width: 70%;
   margin: auto;
   border: 3px black solid;
-  padding: 30px 20px;
+  /* padding: 30px 20px; */
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .my-book-division {
@@ -116,4 +150,30 @@ input {
   border: none;
   border-radius: 10px;
   background-color: rgb(175, 174, 174);
+}
+
+.contact-section{
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  padding:0 50px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+}
+
+footer{
+  background-color: rgba(0, 0, 0, 0.829);
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p{
+  color: #fff;
 }
