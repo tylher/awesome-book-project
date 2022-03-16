@@ -68,3 +68,10 @@ const bookStore = new BookStore();
 bookStore.add.addEventListener('click', () => bookStore.addBook());
 
 window.addEventListener('load', bookStore.getBooks());
+
+let link1 = document.querySelector('.contact');
+link1.addEventListener('click', () => {
+  const hideLink = document.querySelector('.contact-section');
+  hideLink.classList.add('active');
+  hideLink.classList.remove('contact-section');
+})
