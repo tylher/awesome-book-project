@@ -1,12 +1,11 @@
 /* styles for project */
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .main-section {
-  height: auto;
-  margin: auto;
   text-align: center;
 }
 
@@ -20,7 +19,7 @@ body {
   width: 70%;
   margin: auto;
   border: 3px black solid;
-  padding: 0 20px;
+  padding: 30px 20px;
 }
 
 .my-book-division {
