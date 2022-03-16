@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "awesome_book.js",
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tylher/awesome-book-project.git"
@@ -11,7 +13,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {},
+  "bugs": {
+    "url": "https://github.com/tylher/awesome-book-project/issues"
+  },
   "homepage": "https://github.com/tylher/awesome-book-project#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",

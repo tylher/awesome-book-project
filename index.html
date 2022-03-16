@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Book</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main>
-      <section>
+      <section class="main-section">
         <h1>Awesome books</h1>
         <div class="display-books"></div>
       </section>
-      <form >
+      <br><br>
+      <form class="main-form">
+        <div class="inputs">
         <div>
           <input type="text" name="title" id="title" placeholder="title" />
         </div>
@@ -20,8 +23,11 @@
         <div>
           <input type="text" name="author" id="author" placeholder="author" />
         </div>
+      </div>
+      <div class="main-button">
         <br>
         <button type="button" class="add-book">Add</button>
+      </div>
       </form>
     </main>
 

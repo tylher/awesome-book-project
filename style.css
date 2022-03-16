@@ -1,1 +1,41 @@
 /* styles for project */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-section {
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+
+.main-form {
+  margin: auto;
+  min-width: 30%;
+  text-align: center;
+}
+
+.display-books {
+  width: 70%;
+  margin: auto;
+  border: 3px black solid;
+  padding: 0 20px;
+}
+
+.my-book-division {
+  display: flex;
+}
+
+.flex-division-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.align-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
