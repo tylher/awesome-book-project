@@ -5,14 +5,61 @@
   box-sizing: border-box;
 }
 
+h1{
+  font-size: 35px;
+}
+
+h2{
+  font-size: 30px;
+}
+
+h3{
+  font-size: 25px;
+}
+
+main {
+  height: 85vh;
+}
+
 .main-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
 }
 
 .main-form {
+  height: 100%;
   margin: auto;
-  min-width: 30%;
   text-align: center;
+  flex-direction: column;
+}
+
+.inputs {
+  margin: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.add-book {
+  padding: 10px;
+  width: 100px;
+  background-color: gray;
+  border-radius: 10px;
+  font-size: 18px;
+  border: none;
+}
+
+input {
+  height: 60px;
+  width: 70%;
+  padding: 30px;
+  font-size: 20px;
+  border-radius:10px ;
+  border: 1px gray solid;
 }
 
 .display-books {
@@ -20,6 +67,9 @@
   margin: auto;
   border: 3px black solid;
   padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .my-book-division {
@@ -37,12 +87,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
-.contact-section {
+.align-items:nth-child(odd){
+  background-color: rgb(175, 174, 174);
+}
+
+.align-items:nth-child(odd) button{
+  background-color: white;
+}
+
+.contact-section,
+.main-form {
   display: none;
 }
 
 .active {
-  display: block;
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.remove-book{
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(175, 174, 174);
 }

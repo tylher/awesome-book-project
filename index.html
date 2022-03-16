@@ -10,34 +10,32 @@
   </head>
 
   <body>
-    <nav>
-      <h2 class="logo">AWESOME BOOKS</h2>
-      <ul>
-        <li><a class="list" href="">list</a></li>
-        <li><a class="add-book" href="">Add new</a></li>
-        <li><a class="contact" href="">Contact</a></li>
-      </ul>
-    </nav>
+    <header>
+      <h2 class="logo">Awesome Books</h2>
+      <nav>
+        <ul>
+          <li><a class="list" href="#">list</a></li>
+          <li><a class="add-new" href="#">Add new</a></li>
+          <li><a class="contact" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
       <section class="main-section">
         <h1>All awesome books</h1>
         <div class="display-books"></div>
       </section>
-      <br><br>
-      
+
       <form class="main-form">
         <h2>Add a new book</h2>
         <div class="inputs">
-          <div>
-            <input type="text" name="title" id="title" placeholder="title" />
-          </div>
-          <br>
-          <div>
-            <input type="text" name="author" id="author" placeholder="author" />
-          </div>
-        </div>
-        <div class="main-button">
-          <br>
+
+          <input type="text" name="title" id="title" placeholder="title" />
+
+
+          <input type="text" name="author" id="author" placeholder="author" />
+
           <button type="button" class="add-book">Add</button>
         </div>
       </form>
