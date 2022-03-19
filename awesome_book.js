@@ -64,6 +64,7 @@ class BookStore {
       localStorage.setItem('books', JSON.stringify(storage));
       this.bookAuthor.value = '';
       this.bookTitle.value = '';
+      alert('Book added to book library');
       document.querySelector('.main-form').classList.add('hide');
       document.querySelector('.contact-section').classList.add('hide');
       const hideLink = document.querySelector('.main-section');
