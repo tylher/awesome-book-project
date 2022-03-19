@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 let Book = [];
 
 if (!localStorage.getItem('books')) {
@@ -63,36 +62,40 @@ class BookStore {
       div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div><button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
       this.displayBooks.appendChild(div);
       localStorage.setItem('books', JSON.stringify(storage));
+      this.bookAuthor.value = '';
+      this.bookTitle.value = '';
+      document.querySelector('.main-form').classList.add('hide');
+      document.querySelector('.contact-section').classList.add('hide');
+      const hideLink = document.querySelector('.main-section');
+      hideLink.classList.remove('hide');
+      hideLink.classList.add('active');
     });
   }
 
-  /* eslint-disable */
   remove(e) {
-    /* eslint-enable */
     this.displayBooks.innerHTML = '';
     Book = Book.filter(
       (book) => book.Title !== e.parentElement.childNodes[0].childNodes[0].textContent,
     );
     localStorage.setItem('books', JSON.stringify(Book));
 
-    /* eslint-disable */
     Book.map((book) => {
-      /* eslint-enable */
       const div = document.createElement('div');
       div.classList.add('align-items');
       div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
       this.displayBooks.appendChild(div);
+      return '';
     });
   }
 
   getBooks() {
     Book = JSON.parse(localStorage.getItem('books'));
-    // eslint-disable-next-line array-callback-return
     Book.map((item) => {
       const div = document.createElement('div');
       div.classList.add('align-items');
       div.innerHTML = `<div class="flex-division-box"><h3>${item.Title}</h3> <p>${item.author}</p> </div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
       this.displayBooks.appendChild(div);
+      return '';
     });
   }
 }
