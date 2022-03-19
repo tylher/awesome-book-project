@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://tylher.github.io/awesome-book-project/)
 
 
 ## Getting Started
