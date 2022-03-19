@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,30 +8,56 @@
     <title>Awesome Book</title>
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
+    <header>
+      <h2 class="logo">Awesome Books</h2>
+      <nav>
+        <ul>
+          <li><a class="list" href="#">list</a></li>
+          <li><a class="add-new" href="#">Add new</a></li>
+          <li><a class="contact" href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
       <section class="main-section">
-        <h1>Awesome books</h1>
+        <h1>All awesome books</h1>
         <div class="display-books"></div>
       </section>
-      <br><br>
+
       <form class="main-form">
+        <h2>Add a new book</h2>
         <div class="inputs">
-        <div>
+
           <input type="text" name="title" id="title" placeholder="title" />
-        </div>
-        <br>
-        <div>
+
+
           <input type="text" name="author" id="author" placeholder="author" />
+
+          <button type="button" class="add-book">Add</button>
         </div>
-      </div>
-      <div class="main-button">
-        <br>
-        <button type="button" class="add-book">Add</button>
-      </div>
       </form>
+
+      <section class="contact-section">
+        <h2>Contact information</h2>
+        <div class="info">
+          <p>If you have any questions or just wish to say Hello, then you can reach us on :</p>
+          <ul>
+            <li>Our mail : <a href="mailto:mail@mail.com">mail@mail.com</a></li>
+            <li>Our phone number : <a href="tel:+2348123456789">+2348123456789</a></li>
+            <li> Our address : Street name 03, 120060, City, Country</li>
+          </ul>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <p>&copy;2022 Awesome Books</p>
+    </footer>
 
     <script src="awesome_book.js"></script>
   </body>
+
 </html>
