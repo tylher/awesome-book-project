@@ -22,7 +22,6 @@ export default class BookStore {
       e.preventDefault();
       const title = this.bookTitle.value;
       const author = this.bookAuthor.value;
-      console.log(title);
       const book = new Book(title, author);
       if (title.trim() === '' && author.trim() === '') {
         return;
