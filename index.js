@@ -1,10 +1,11 @@
 import showDate from './modules/date.js';
-
-if (!localStorage.getItem('books')) {
-  localStorage.setItem('books', JSON.stringify(Book));
-}
+import BookStore from './modules/BookStore.js';
 
 const bookStore = new BookStore();
+
+if (!localStorage.getItem('books')) {
+  localStorage.setItem('books', JSON.stringify(BookStore.Book));
+}
 
 bookStore.addBook();
 

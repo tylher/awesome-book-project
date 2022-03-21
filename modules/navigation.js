@@ -32,3 +32,5 @@ const SinglePage = () => {
     hideLink.classList.add('active');
   });
 };
+
+export default { SinglePage };
