@@ -21,15 +21,26 @@ p {
   font-size: 20px;
 }
 
+body{
+  position: relative;
+}
+
 header {
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding: 10px 8%;
   align-items: center;
   margin-bottom: 20px;
+  background-color: rgb(180, 180, 180);
+  z-index: 1;
 }
 
 header > h2 {
+  
   color: rgb(36, 36, 36);
 }
 
@@ -55,18 +66,21 @@ nav ul li > a {
 }
 
 main {
-  height: 85vh;
+  position: relative;
+  min-height: 100vh;
 }
 
 .main-section {
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 20px;
   text-align: center;
 }
 
 .main-form {
   height: 100%;
+  gap: 20px;
   margin: auto;
   text-align: center;
   flex-direction: column;
@@ -86,6 +100,12 @@ main {
   background-color: rgb(175, 174, 174);
   border-radius: 10px;
   border: none;
+}
+
+.add-btn{
+  width: 70%;
+  display: flex;
+  justify-content: end;
 }
 
 input {
@@ -156,6 +176,7 @@ input {
 .contact-section {
   flex-direction: column;
   height: 100%;
+  gap: 20px;
   align-items: center;
   padding: 0 50px;
 }
@@ -170,11 +191,20 @@ input {
 footer {
   background-color: rgba(0, 0, 0, 0.829);
   padding: 20px;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
 }
 
 footer p {
   color: #fff;
+}
+
+
+
+.date-holder{
+  width: 100%;
+  padding: 0 50px 10px;
+  display: flex;
+  justify-content: end;
 }

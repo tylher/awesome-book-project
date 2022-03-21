@@ -2,10 +2,10 @@ import { DateTime } from './luxon.js';
 
 const showDate = () => {
   const date = DateTime.now();
-  const textTemplate = document.createElement('small');
+  const textTemplate = document.createElement('p');
   textTemplate.textContent = date;
-  const header = document.getElementsByTagName('header')[0];
-  header.appendChild(textTemplate);
+  const dateHolder = document.querySelector('.date-holder');
+  dateHolder.appendChild(textTemplate);
 };
 
 export default showDate;
