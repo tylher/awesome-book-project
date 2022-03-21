@@ -21,7 +21,7 @@ p {
   font-size: 20px;
 }
 
-body{
+body {
   position: relative;
 }
 
@@ -40,7 +40,6 @@ header {
 }
 
 header > h2 {
-  
   color: rgb(36, 36, 36);
 }
 
@@ -102,7 +101,7 @@ main {
   border: none;
 }
 
-.add-btn{
+.add-btn {
   width: 70%;
   display: flex;
   justify-content: end;
@@ -200,9 +199,7 @@ footer p {
   color: #fff;
 }
 
-
-
-.date-holder{
+.date-holder {
   width: 100%;
   padding: 0 50px 10px;
   display: flex;
