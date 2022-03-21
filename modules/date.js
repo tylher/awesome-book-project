@@ -1,11 +1,18 @@
 import { DateTime } from './luxon.js';
 
-const showDate = () => {
+const dateHolder = document.querySelector('.date-holder');
+const textTemplate = document.createElement('p');
+dateHolder.appendChild(textTemplate);
+
+const ChangeTime = () => {
   const date = DateTime.now();
-  const textTemplate = document.createElement('p');
-  textTemplate.textContent = date;
-  const dateHolder = document.querySelector('.date-holder');
-  dateHolder.appendChild(textTemplate);
+  textTemplate.textContent = date.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+};
+
+const showDate = () => {
+  setInterval(() => {
+    ChangeTime();
+  }, 1000);
 };
 
 export default showDate;
