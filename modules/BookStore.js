@@ -1,42 +1,6 @@
-let Book = [];
-
-if (!localStorage.getItem('books')) {
-  localStorage.setItem('books', JSON.stringify(Book));
-}
-
-const link1 = document.querySelector('.contact');
-
-link1.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.querySelector('.main-section').classList.add('hide');
-  document.querySelector('.main-form').classList.add('hide');
-  const hideLink = document.querySelector('.contact-section');
-  hideLink.classList.remove('hide');
-  hideLink.classList.add('active');
-});
-
-const link2 = document.querySelector('.add-new');
-link2.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.querySelector('.main-section').classList.add('hide');
-  document.querySelector('.contact-section').classList.add('hide');
-  const hideLink = document.querySelector('.main-form');
-  hideLink.classList.remove('hide');
-  hideLink.classList.add('active');
-});
-
-const link3 = document.querySelector('.list');
-link3.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.querySelector('.main-form').classList.add('hide');
-  document.querySelector('.contact-section').classList.add('hide');
-  const hideLink = document.querySelector('.main-section');
-  hideLink.classList.remove('hide');
-  hideLink.classList.add('active');
-});
-
-class BookStore {
+export default class BookStore {
   constructor(Title, author) {
+    this.Book = [];
     this.Title = Title;
     this.author = author;
     this.bookTitle = document.getElementById('title');
@@ -54,7 +18,7 @@ class BookStore {
       if (title.trim() === '' && author.trim() === '') {
         return;
       }
-      Book.push(book);
+      this.Book.push(book);
       const storage = JSON.parse(localStorage.getItem('books'));
       storage.push(book);
       const div = document.createElement('div');
@@ -75,12 +39,12 @@ class BookStore {
 
   remove(e) {
     this.displayBooks.innerHTML = '';
-    Book = Book.filter(
+    this.Book = this.Book.filter(
       (book) => book.Title !== e.parentElement.childNodes[0].childNodes[0].textContent,
     );
-    localStorage.setItem('books', JSON.stringify(Book));
+    localStorage.setItem('books', JSON.stringify(this.Book));
 
-    Book.map((book) => {
+    this.Book.map((book) => {
       const div = document.createElement('div');
       div.classList.add('align-items');
       div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
@@ -90,8 +54,8 @@ class BookStore {
   }
 
   getBooks() {
-    Book = JSON.parse(localStorage.getItem('books'));
-    Book.map((item) => {
+    this.Book = JSON.parse(localStorage.getItem('books'));
+    this.Book.map((item) => {
       const div = document.createElement('div');
       div.classList.add('align-items');
       div.innerHTML = `<div class="flex-division-box"><h3>${item.Title}</h3> <p>${item.author}</p> </div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
@@ -100,9 +64,3 @@ class BookStore {
     });
   }
 }
-
-const bookStore = new BookStore();
-
-bookStore.addBook();
-
-window.addEventListener('load', bookStore.getBooks());
