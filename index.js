@@ -1,5 +1,6 @@
 import showDate from './modules/date.js';
 import BookStore from './modules/BookStore.js';
+import singlePage from './modules/navigation.js';
 
 const bookStore = new BookStore();
 
@@ -8,8 +9,6 @@ if (!localStorage.getItem('books')) {
 }
 
 bookStore.addBook();
-
-window.addEventListener('load', () => {
-  bookStore.getBooks();
-  showDate();
-});
+bookStore.getBooks();
+singlePage();
+showDate();

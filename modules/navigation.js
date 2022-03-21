@@ -33,4 +33,4 @@ const SinglePage = () => {
   });
 };
 
-export default { SinglePage };
+export default SinglePage;

@@ -23,7 +23,7 @@ export default class BookStore {
       storage.push(book);
       const div = document.createElement('div');
       div.classList.add('align-items');
-      div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div><button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
+      div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div><button  class='remove-book'>remove</button> `;
       this.displayBooks.appendChild(div);
       localStorage.setItem('books', JSON.stringify(storage));
       this.bookAuthor.value = '';
@@ -37,19 +37,27 @@ export default class BookStore {
     });
   }
 
-  remove(e) {
-    this.displayBooks.innerHTML = '';
-    this.Book = this.Book.filter(
-      (book) => book.Title !== e.parentElement.childNodes[0].childNodes[0].textContent,
-    );
-    localStorage.setItem('books', JSON.stringify(this.Book));
+  remove() {
+    const removeBtn = document.querySelectorAll('.remove-book');
+    console.log(removeBtn);
+    removeBtn.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        this.displayBooks.innerHTML = '';
+        this.Book = this.Book.filter(
+          (book) => book.Title
+          !== removeBtn[index].parentElement.childNodes[0].childNodes[0].textContent,
+        );
+        localStorage.setItem('books', JSON.stringify(this.Book));
 
-    this.Book.map((book) => {
-      const div = document.createElement('div');
-      div.classList.add('align-items');
-      div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
-      this.displayBooks.appendChild(div);
-      return '';
+        this.Book.map((book) => {
+          const div = document.createElement('div');
+          div.classList.add('align-items');
+          div.innerHTML = `<div class="flex-division-box"><h3>${book.Title}</h3> <p>${book.author}</p></div> <button  class='remove-book'>remove</button> `;
+          this.displayBooks.appendChild(div);
+          this.remove();
+          return '';
+        });
+      });
     });
   }
 
@@ -58,8 +66,9 @@ export default class BookStore {
     this.Book.map((item) => {
       const div = document.createElement('div');
       div.classList.add('align-items');
-      div.innerHTML = `<div class="flex-division-box"><h3>${item.Title}</h3> <p>${item.author}</p> </div> <button onclick='bookStore.remove(this)' class='remove-book'>remove</button> `;
+      div.innerHTML = `<div class="flex-division-box"><h3>${item.Title}</h3> <p>${item.author}</p> </div> <button  class='remove-book'>remove</button> `;
       this.displayBooks.appendChild(div);
+      this.remove();
       return '';
     });
   }
