@@ -2,7 +2,7 @@ import Book from './Book.js';
 
 export default class BookStore {
   constructor() {
-    this.Book = [];
+    this.store = [];
     this.bookTitle = document.getElementById('title');
     this.bookAuthor = document.getElementById('author');
     this.displayBooks = document.querySelector('.display-books');
@@ -26,7 +26,7 @@ export default class BookStore {
       if (title.trim() === '' && author.trim() === '') {
         return;
       }
-      this.Book.push(book);
+      this.store.push(book);
       const storage = JSON.parse(localStorage.getItem('books'));
       storage.push(book);
       this.buildTemplate(book);
@@ -47,13 +47,13 @@ export default class BookStore {
     removeBtn.forEach((btn, index) => {
       btn.addEventListener('click', () => {
         this.displayBooks.innerHTML = '';
-        this.Book = this.Book.filter(
-          (book) => book.title
+        this.store = this.store.filter(
+          (item) => item.title
           !== removeBtn[index].parentElement.childNodes[0].childNodes[0].textContent,
         );
-        localStorage.setItem('books', JSON.stringify(this.Book));
+        localStorage.setItem('books', JSON.stringify(this.store));
 
-        this.Book.map((book) => {
+        this.store.map((book) => {
           this.buildTemplate(book);
           return '';
         });
@@ -62,10 +62,15 @@ export default class BookStore {
   }
 
   getBooks() {
-    this.Book = JSON.parse(localStorage.getItem('books'));
-    this.Book.map((item) => {
-      this.buildTemplate(item);
-      return '';
-    });
+    if (!localStorage.getItem('books')) {
+      localStorage.setItem('books', JSON.stringify(this.store));
+    } else {
+      localStorage.setItem('books', JSON.stringify(this.store));
+      this.store = JSON.parse(localStorage.getItem('books'));
+      this.store.map((item) => {
+        this.buildTemplate(item);
+        return '';
+      });
+    }
   }
 }

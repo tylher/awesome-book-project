@@ -4,10 +4,6 @@ import singlePage from './modules/navigation.js';
 
 const bookStore = new BookStore();
 
-if (!localStorage.getItem('books')) {
-  localStorage.setItem('books', JSON.stringify(BookStore.Book));
-}
-
 bookStore.addBook();
 bookStore.getBooks();
 singlePage();
