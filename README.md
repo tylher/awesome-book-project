@@ -21,6 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 - Understand how HTML and javascript object works
+- Understand Es6 modules
 - Understand github and gitflow
 
 
